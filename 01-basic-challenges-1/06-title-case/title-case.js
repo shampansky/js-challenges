@@ -5,6 +5,4 @@ function titleCase(string) {
     .join(' ');
 }
 
-console.log(titleCase('one twi dfa'));
-
 module.exports = titleCase;
