@@ -92,11 +92,32 @@ class HashTable {
     }
   }
 
+  getValues() {
+    const values = []
+    for (let i = 0; i < this.storage.length; i++) {
+      if (this.storage[i] !== undefined) {
+        this.storage[i].forEach(value => {
+          values.push(value[1])
+        })
+        // values.push(this.storage[i]);
+      }
+    }
+    return values;
+  }
+
   clear() {
     this.storage = [];
   }
 
  // ADD getValues() METHOD
 }
+
+const test = new HashTable()
+
+test.set('one', 1)
+test.set('five', 5)
+test.set('unknown', 444)
+
+console.log(test.getValues())
 
 module.exports = HashTable;
