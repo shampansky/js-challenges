@@ -92,7 +92,7 @@ class HashTable {
   has(key) {
     // Hash the key to find the index
     const index = this._hash(key, this.limit);
-    
+
     // Check if the bucket at the index exists
     if (this.storage[index]) {
       // Iterate through the bucket's key-value pairs
@@ -104,7 +104,7 @@ class HashTable {
         }
       }
     }
-    
+
     // If the key is not found, return false
     return false;
   }
@@ -126,7 +126,14 @@ class HashTable {
     this.storage = [];
   }
 
-  
+
 }
+
+const myStorage = new HashTable()
+
+myStorage.set('test', 55)
+myStorage.set('test2', 355)
+
+console.log(myStorage.storage)
 
 module.exports = HashTable;
